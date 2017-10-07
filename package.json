@@ -9,6 +9,7 @@
     "react-scripts": "1.0.14"
   },
   "scripts": {
+    "install": "npm install grpc --runtime=electron --target=1.6.0",
     "start": "electron build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom"
