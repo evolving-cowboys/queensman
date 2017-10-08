@@ -1,5 +1,6 @@
 import React from 'react';
 import ProtoLoader from './ProtoLoader';
+import RequestRunner from './RequestRunner';
 
 
 const ProtoExplorer = ({ descriptor, filename, loadProto }) => (
@@ -9,7 +10,7 @@ const ProtoExplorer = ({ descriptor, filename, loadProto }) => (
       loadProto={loadProto}
     />
     { descriptor 
-      ? <span>Not implemented yet</span>
+      ? <RequestRunner descriptor={descriptor} />
       : <span>Please, load a proto file</span>}
   </div>
 );
