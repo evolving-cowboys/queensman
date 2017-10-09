@@ -6,6 +6,7 @@ import View from '../components/ProtoExplorer';
 const mapStateToProps = (state) => ({
   filename: state.proto.filename,
   descriptor: state.proto.descriptor,
+  url: state.url,
 });
 
 
