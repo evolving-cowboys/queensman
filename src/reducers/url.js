@@ -2,7 +2,7 @@
 import * as actions from '../actions';
 
 
-const url = (state = { host: 'http://localhost', port: 50051 }, action) => {
+const url = (state = { host: 'localhost', port: 50051 }, action) => {
   switch (action.type) {
     case actions.URL.HOST_CHANGED:
       return Object.assign({}, state, {
