@@ -41,7 +41,7 @@ class RequestRunner extends React.Component {
 
     call(json.parse(this.state.request), (err, response) => {
       console.log(response);
-      self.setState({response: json.stringify(response)});
+      self.setState({response: json.stringify(response, null, '\t')});
     });
   };
 
