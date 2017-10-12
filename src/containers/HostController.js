@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { changeHost, changePort } from '../actions';
+import { URL } from '../actions/creators';
 import View from '../components/HostController';
+import { compose } from '../utils';
 
 
 const mapStateToProps = (state) => ({
@@ -10,8 +11,8 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = (dispatch) => ({
-  onHostChange: (host) => dispatch(changeHost(host)),
-  onPortChange: (port) => dispatch(changePort(port)),
+  onHostChange: compose(dispatch, URL.changeHost),
+  onPortChange: compose(dispatch, URL.changePort),
 });
 
 const HostController = connect(
