@@ -1,4 +1,6 @@
 import * as t from './types';
+import { compose } from '../lib/utils';
+
 
 export const URL = {
   changePort: (port) => ({
@@ -32,5 +34,39 @@ export const PROTO = {
 
 
 export const RPC = {
+  changeRequest: (request) => ({
+    type: t.RPC.REQUEST_CHANGED,
+    request,
+  }),
 
+  receiveResponse: (response) => ({
+    type: t.RPC.RESPONSE_RECEIVED,
+    response,
+  }),
+
+  prepareCall: () => ({
+    type: t.RPC.PREPARE_CALL,
+  }),
+  
+  call: () => (dispatch, getState) => {
+    dispatch(RPC.prepareCall());
+    const state = getState();
+
+    const { host, port } = state.url;
+    const requestUrl = `${host}:${port}`;
+    const { currentStub: { name: stubName } } = state.proto;
+    const { currentCall: { name: callName } } = state.proto;
+
+    const stub = state.urlServiceMap[requestUrl][stubName];
+    const call = stub[callName].bind(stub);
+
+    const requestData = state.request.data;
+    return new Promise((resolve, reject) => {
+      call(requestData, (err, response) => {
+        if (err) { reject(err); return; }
+        resolve(response); 
+      });
+    })
+    .then(compose(dispatch, RPC.receiveResponse));
+  },
 };

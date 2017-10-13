@@ -67,7 +67,7 @@ const queensmanApp = (
     default:
       return Object.assign({}, state, {
         proto: proto(state.proto, action),
-        url: proto(state.url, action),
+        url: url(state.url, action),
       });
   }
 }
