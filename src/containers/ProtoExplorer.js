@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { PROTO } from '../actions/creators';
 import View from '../components/ProtoExplorer';
 
-import { compose } from '../utils';
+import { compose } from '../lib/utils';
 
 
 const mapStateToProps = (state) => ({

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { URL } from '../actions/creators';
 import View from '../components/HostController';
-import { compose } from '../utils';
+import { compose } from '../lib/utils';
 
 
 const mapStateToProps = (state) => ({

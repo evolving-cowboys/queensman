@@ -33,7 +33,7 @@ const proto = (
       return Object.assign({}, state, {
         currentCall: {
           name: action.call,
-          descriptor: state.currentStub.constructor[action.call],
+          descriptor: state.currentStub.constructor.service[action.call],
         },
       });
     default:

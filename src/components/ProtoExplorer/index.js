@@ -1,7 +1,6 @@
 import React from 'react';
 import ProtoLoader from './ProtoLoader';
-import StubSelector from './StubSelector';
-import CallSelector from './CallSelector';
+import Selector from './Selector';
 
 
 const ProtoExplorer = ({
@@ -15,18 +14,24 @@ const ProtoExplorer = ({
       loadProto={loadProto}
     />
     { stubNames && stubNames.length > 0 && (
-        <StubSelector
-          stubNames={stubNames}
-          currentStubName={currentStubName}
-          selectStub={selectStub}
+      <div>
+        <div>Select Service Stub</div>
+        <Selector
+          items={stubNames}
+          selectedItem={currentStubName}
+          onSelect={selectStub}
         />
+      </div>
     )}
     { callNames && callNames.length > 0 && (
-        <CallSelector
-          callNames={callNames}
-          currentCallName={currentCallName}
-          selectCall={selectCall}
+      <div>
+        <div>Select RPC Call</div>
+        <Selector
+          items={callNames}
+          selectedItem={currentCallName}
+          onSelect={selectCall}
         />
+      </div>
     )}
   </div>
 );
