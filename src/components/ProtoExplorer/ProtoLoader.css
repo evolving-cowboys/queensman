@@ -1,0 +1,34 @@
+.ProtoLoader {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.ProtoLoader-filename {
+  margin-right: auto;
+}
+
+.ProtoLoader-loadButton {
+  background-color: #FF9800;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 4px #212121;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  height: 32px;
+  outline: none;
+  padding: 8px;
+  text-transform: uppercase;
+  transition-duration: .2s;
+}
+
+.ProtoLoader-loadButton:focus {
+  outline: none;
+}
+
+.ProtoLoader-loadButton:active {
+  box-shadow: none;
+}
