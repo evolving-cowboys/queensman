@@ -10,6 +10,10 @@ Queensman
 
     Protocols maketh app
 
+.. image:: screenshots/queensman.png
+   :alt: main application window
+   :align: center
+
 Queensman is an electron application intended to help developing and testing
 apps which use `gRPC`_ protocol.
 
