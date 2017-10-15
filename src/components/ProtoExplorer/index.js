@@ -1,16 +1,38 @@
 import React from 'react';
 import ProtoLoader from './ProtoLoader';
+import Selector from './Selector';
 
 
-const ProtoExplorer = ({ descriptor, filename, loadProto }) => (
+const ProtoExplorer = ({
+  filename, loadProto,
+  stubNames, currentStubName, selectStub,
+  callNames, currentCallName, selectCall,
+}) => (
   <div className='ProtoExplorer'>
     <ProtoLoader
       filename={filename}
       loadProto={loadProto}
     />
-    { descriptor 
-      ? <span>Not implemented yet</span>
-      : <span>Please, load a proto file</span>}
+    { stubNames && stubNames.length > 0 && (
+      <div>
+        <div>Select Service Stub</div>
+        <Selector
+          items={stubNames}
+          selectedItem={currentStubName}
+          onSelect={selectStub}
+        />
+      </div>
+    )}
+    { callNames && callNames.length > 0 && (
+      <div>
+        <div>Select RPC Call</div>
+        <Selector
+          items={callNames}
+          selectedItem={currentCallName}
+          onSelect={selectCall}
+        />
+      </div>
+    )}
   </div>
 );
 

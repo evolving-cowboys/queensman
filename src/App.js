@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 
 import HostController from './containers/HostController';
 import ProtoExplorer from './containers/ProtoExplorer';
+import RequestExecutor from './containers/RequestExecutor';
 
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
     <Header />
     <HostController />
     <ProtoExplorer />
+    <RequestExecutor />
     <Footer />
   </div>
 );
