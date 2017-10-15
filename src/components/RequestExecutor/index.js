@@ -1,7 +1,8 @@
 import React from 'react';
+import './index.css';
 
 
-const RequestExecutor = ({ 
+const RequestExecutor = ({
   enabled,
   loading,
   request,
@@ -10,9 +11,15 @@ const RequestExecutor = ({
   rpcCall,
 }) => (
   <div className='RequestExecutor'>
-    <div>
+    <div className='RequestExecutor-request'>
       <textarea
-        className='RequestExecutor-requestField'
+        className={`
+          RequestExecutor-requestField
+           ${request && request.data !== null
+             ? ''
+             : 'RequestExecutor-requestField__error'
+           }
+        `}
         value={request && request.raw}
         onChange={(e) => changeRequest(e.target.value)}
       />
@@ -25,9 +32,11 @@ const RequestExecutor = ({
         { loading ? 'Wait ...' : 'Call !!!' }
       </button>
     </div>
-    <pre className='RequestExecutor-responseViewer'>
-      { response && response.repr }
-    </pre>
+    <div className='RequestExecutor-response'>
+      <pre className='RequestExecutor-responseViewer'>
+        { response && response.repr }
+      </pre>
+    </div>
   </div>
 );
 
