@@ -1,9 +1,12 @@
 import React from 'react';
+import './index.css';
 
 
 const Footer = () => (
   <footer className="Footer">
-    &copy; Evolving Cowboys
+    <div className="Footer-copyright">
+        &copy; 2017 Evolving Cowboys
+    </div>
   </footer>
 );
 
