@@ -9,7 +9,7 @@ export const URL = {
   }),
 
   changeHost: (host) => ({
-    type: t.URL.PORT_CHANGED,
+    type: t.URL.HOST_CHANGED,
     host,
   }),
 };
