@@ -1,0 +1,16 @@
+.Header {
+  align-items: center;
+  background-color: #00796B;
+  box-shadow: 2px 0 2px #212121;
+  color: #FFFFFF;
+  display: flex;
+  height: 48px;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+.Header-title {
+  display: inline-block; 
+  margin: 0;
+  padding: 0;
+}
