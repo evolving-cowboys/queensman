@@ -1,0 +1,26 @@
+.HostController {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 8px auto;
+  width: 100%;
+}
+
+.HostController-hostInput-field, .HostController-portInput-field {
+  border: none;
+  border-bottom: 1px solid #BDBDBD; 
+  font-size: 16px;
+}
+
+.HostController-hostInput-field:focus, .HostController-portInput-field:focus {
+  border-bottom: 1px solid #009688; 
+  outline: none;
+}
+
+.HostController-hostInput, .HostController-portInput {
+  margin: 0 8px;
+}
+
+.HostController-title {
+  margin: 0 16px 0 0;
+}
