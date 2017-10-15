@@ -1,0 +1,18 @@
+.ProtoExplorer {
+  margin: 8px auto;
+}
+
+.ProtoExplorer-selectors {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.ProtoExplorer-stubSelector, .ProtoExplorer-callSelector {
+  width: 50%;
+}
+
+.ProtoExplorer-stubSelector-title, .ProtoExplorer-callSelector-title {
+  font-weight: bold;
+}

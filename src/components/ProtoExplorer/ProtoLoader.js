@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProtoLoader.css';
 
 
 class ProtoLoader extends React.Component {
@@ -23,17 +24,15 @@ class ProtoLoader extends React.Component {
   render() {
     return (
       <div className='ProtoLoader'>
-        {this.props.filename
-          ? <span className='ProtoLoader-filename'>{this.props.filename}</span>
-          : null}
-        <div className='ProtoLoader-fileLoader'>
-          <button
-            className='ProtoLoader-fileLoader-button'
-            onClick={this.loadProto}
-          >
-            Choose file...
-          </button>
-        </div>
+        <span className='ProtoLoader-filename'>
+          { this.props.filename ? this.props.filename : 'No file chosen' }
+        </span>
+        <button
+          className='ProtoLoader-loadButton'
+          onClick={this.loadProto}
+        >
+          { this.props.filename ? 'Choose another file' : 'Chose file' }
+        </button>
       </div>
     );
   };

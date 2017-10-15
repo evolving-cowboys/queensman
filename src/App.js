@@ -11,9 +11,11 @@ import RequestExecutor from './containers/RequestExecutor';
 const App = () => (
   <div className="App">
     <Header />
-    <HostController />
-    <ProtoExplorer />
-    <RequestExecutor />
+    <main className="Content">
+      <HostController />
+      <ProtoExplorer />
+      <RequestExecutor />
+    </main>
     <Footer />
   </div>
 );

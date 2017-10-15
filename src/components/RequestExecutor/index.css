@@ -1,0 +1,56 @@
+.RequestExecutor {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.RequestExecutor-request, .RequestExecutor.response {
+  width: 50%;
+}
+
+.RequestExecutor-response {
+  padding-left: 4px;
+}
+
+.RequestExecutor-request {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.RequestExecutor-requestField {
+  display: block;
+  height: 250px;
+  margin-bottom: 4px;
+  resize: none;
+  width: 100%;
+}
+
+.RequestExecutor-requestField__error {
+  border-color: red;
+}
+
+.RequestExecutor-button {
+  background-color: #FF9800;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 4px #212121;
+  color: #FFFFFF;
+  height: 32px;
+  outline: none;
+  padding: 8px;
+  text-transform: uppercase;
+  transition-duration: .2s;
+}
+
+.RequestExecutor-button:focus {
+  outline: none;
+}
+
+.RequestExecutor-button:active {
+  box-shadow: none;
+}
+
+.RequestExecutor-button[disabled] {
+  background-color: #BDBDBD;
+}
