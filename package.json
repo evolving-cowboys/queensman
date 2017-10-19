@@ -16,7 +16,8 @@
   "scripts": {
     "start": "electron ./build",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "electron": "=1.6.0"
