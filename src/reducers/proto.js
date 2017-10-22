@@ -1,3 +1,4 @@
+import protobuf from 'protobufjs';
 import { Descriptor } from '../lib/domain';
 import * as actions from '../actions/types';
 
@@ -13,7 +14,8 @@ const proto = (
 ) => {
   switch (action.type) {
     case actions.PROTO.LOAD:
-      const grpcDescriptor = window.grpc.load(action.filename);
+      const pbjsRoot = protobuf.loadSync(action.filename);
+      const grpcDescriptor = window.grpc.loadObject(pbjsRoot);
       const descriptor = new Descriptor(grpcDescriptor);
       return Object.assign({}, state, {
         descriptor,
