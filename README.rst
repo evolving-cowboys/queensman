@@ -23,8 +23,7 @@ you want to try it, see `Development`_ section.
 Development
 ===========
 
-Currently `react-scripts`_ are used to build the application. Commands are
-conveniently put into :file:`package.json`.
+Commands are conveniently put into :file:`package.json`.
 
 In order to build the application issue the :code:`npm run build` command which
 will compile all the javascript and put it into the :file:`build` directory.
