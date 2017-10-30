@@ -18,32 +18,22 @@ const queensmanApp = (
 ) => {
   switch (action.type) {
     case (actions.RPC.REQUEST_CHANGED):
-      let requestData;
-      try {
-        requestData = JSON.parse(action.request);
-      } catch (_) {
-        // TODO: better error handling
-        requestData = null;
-      }
-
       return Object.assign({}, state, {
-        request: { raw: action.request, data: requestData },
+        request: {
+          raw: action.raw,
+          data: action.data,
+        },
       });
     case (actions.RPC.RESPONSE_RECEIVED):
-      let responseRepr;
-      try {
-        responseRepr = JSON.stringify(action.response, null, '\t');
-      } catch (_) {
-        responseRepr = null;
-      }
       return Object.assign({}, state, {
         response: {
-          raw: action.response,
-          repr: responseRepr,
+          raw: action.raw,
+          repr: action.repr,
         },
         loading: false,
       });
     case (actions.RPC.PREPARE_CALL):
+      // FIXME: move logic to action!!! (TODO: how????)
       const { host, port } = state.url; 
       const requestUrl = `${host}:${port}`;
       const { currentStub } = state.proto;
@@ -51,6 +41,7 @@ const queensmanApp = (
       const urlServices = state.urlServiceMap[requestUrl] || {};
       if (urlServices[currentStub.name]) return state;
       
+      // FIXME; this should in ACTION
       const serviceStub = new currentStub.constructor(
         requestUrl,
         window.grpc.credentials.createInsecure(),

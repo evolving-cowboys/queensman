@@ -34,15 +34,35 @@ export const PROTO = {
 
 
 export const RPC = {
-  changeRequest: (request) => ({
-    type: t.RPC.REQUEST_CHANGED,
-    request,
-  }),
+  changeRequest: (request) => {
+    let requestData;
+    try {
+      requestData = JSON.parse(action.request);
+    } catch (_) {
+      // TODO: better error handling
+      requestData = null;
+    }
 
-  receiveResponse: (response) => ({
-    type: t.RPC.RESPONSE_RECEIVED,
-    response,
-  }),
+    return  ({
+      type: t.RPC.REQUEST_CHANGED,
+      raw: request,
+      data: requestData,
+    });
+  },
+
+  receiveResponse: (response) => {
+    let responseRepr;
+    try {
+      responseRepr = JSON.stringify(action.response, null, '\t');
+    } catch (_) {
+      responseRepr = null;
+    }
+    return ({
+      type: t.RPC.RESPONSE_RECEIVED,
+      raw: response,
+      repr: responseRepr,
+    });
+  },
 
   prepareCall: () => ({
     type: t.RPC.PREPARE_CALL,
