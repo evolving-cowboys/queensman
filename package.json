@@ -23,6 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "electron": "electron .",
-    "electron-start": "node src/electron-wait-react"
+    "electron-start": "node src/electron-wait-react",
+    "react-start": "react-scripts start"
   }
 }
