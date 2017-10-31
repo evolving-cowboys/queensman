@@ -37,7 +37,7 @@ export const RPC = {
   changeRequest: (request) => {
     let requestData;
     try {
-      requestData = JSON.parse(action.request);
+      requestData = JSON.parse(request);
     } catch (_) {
       // TODO: better error handling
       requestData = null;
@@ -53,7 +53,7 @@ export const RPC = {
   receiveResponse: (response) => {
     let responseRepr;
     try {
-      responseRepr = JSON.stringify(action.response, null, '\t');
+      responseRepr = JSON.stringify(response, null, '\t');
     } catch (_) {
       responseRepr = null;
     }
