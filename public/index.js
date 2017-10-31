@@ -25,7 +25,7 @@ function createWindow () {
   win.loadURL(startUrl);
 
   // Uncomment next line to open the DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
