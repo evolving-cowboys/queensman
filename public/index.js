@@ -16,12 +16,13 @@ function createWindow () {
     },
   })
 
-  // and load the index.html of the app.
-  win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+  const startUrl = process.env.ELECTRON_START_URL || url.format({
+    pathname: path.join(__dirname, '/../build/index.html'),
     protocol: 'file:',
     slashes: true
-  }))
+  });
+
+  win.loadURL(startUrl);
 
   // Uncomment next line to open the DevTools.
   // win.webContents.openDevTools()
